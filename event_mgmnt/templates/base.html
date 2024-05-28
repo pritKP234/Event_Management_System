@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Event Management System{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap-grid.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap-grid.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap-reboot.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap-reboot.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <!--swiper css-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+    />
+
+    <!--font awesome-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
+
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-body-tertiary">
+            <div class="container-fluid">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" style="color: white; font-size:large; margin-top: 11px; margin-right: 15px;" href="{% url 'home' %}">HOME</a></li>
+                    <li class="nav-item"><a class="nav-link" style="color: white; font-size:large; margin-top: 11px; margin-right: 15px;" href="#service">SERVICES</a></li>
+                    <li class="nav-item"><a class="nav-link" style="color: white; font-size:large; margin-top: 11px; margin-right: 15px;" href="#about">ABOUT</a></li>
+                    <li class="nav-item"><a class="nav-link" style="color: white; font-size:large; margin-top: 11px; margin-right: 15px;" href="#gallery">GALLERY</a></li>
+                    <li class="nav-item"><a class="nav-link" style="color: white; font-size:large; margin-top: 11px; margin-right: 350px;" href="#feedback">FEEDBACK</a></li>
+                {% if user.is_authenticated %}
+                    <li><a style="margin: 10px;" type="button" class="btn btn-link px-3 me-2" href="{% url 'dashboard' %}">Dashboard</a></li>
+                    <li><a style="margin: 10px;" type="button" class="btn btn-link px-3 me-2" href="{% url 'create_event' %}">Create_Event</a></li>
+                    <li><a style="margin: 10px;" type="button" class="btn btn-link px-3 me-2" href="{% url 'logout' %}">Logout</a></li>
+                {% else %}
+                    <li><a style="margin: 10px; margin-left:200px;" type="button" class="btn btn-link px-3 me-2" href="{% url 'login' %}">Login</a></li>
+                    <li><a style="margin: 10px;" type="button" class="btn btn-link px-3 me-2" href="{% url 'register' %}">Register</a></li>
+                {% endif %}
+                <li><a style="margin: 10px;" type="button" class="btn btn-link px-3 me-2" href="{% url 'event_list' %}">Events</a></li>
+            </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="bg-warning">
+        {% if user.is_authenticated %}
+            <h1 style="margin-left: 50px; padding-top: 20px;">Hello, {{request.user|title}}</h1>
+        {% endif %}
+        {% block content %}
+        {% endblock %}
+    </main>
+
+<!-- footer section starts  -->
+  <section class="footer">
+    <div class="box-container">
+      <div class="box">
+        <h3>branches</h3>
+        <a href="#"> <i class="fas fa-map-marker-alt"></i> bangalore </a>
+        <a href="#"> <i class="fas fa-map-marker-alt"></i> hyderabad </a>
+        <a href="#"> <i class="fas fa-map-marker-alt"></i> delhi </a>
+        <a href="#"> <i class="fas fa-map-marker-alt"></i> kolkata </a>
+        <a href="#"> <i class="fas fa-map-marker-alt"></i> chennai </a>
+        <a href="#"> <i class="fas fa-map-marker-alt"></i> mumbai </a>
+      </div>
+
+      <div class="box">
+        <h3>quick links</h3>
+        <a href="#home"> <i class="fas fa-arrow-right"></i> home </a>
+        <a href="#service"> <i class="fas fa-arrow-right"></i> service </a>
+        <a href="#about"> <i class="fas fa-arrow-right"></i> about </a>
+        <a href="#gallery"> <i class="fas fa-arrow-right"></i> gallery </a>
+        <a href="#contact"> <i class="fas fa-arrow-right"></i> contact </a>
+      </div>
+
+      <div class="box">
+        <h3>contact info</h3>
+        <a href="#"> <i class="fas fa-phone"></i> +91-7606846773 </a>
+        <a href="#"> <i class="fas fa-phone"></i> +91-8110574694 </a>
+        <a href="#"> <i class="fas fa-envelope"></i> support@eorganisers.com </a>
+        <a href="#"> <i class="fas fa-envelope"></i> bookings@eorganisers.com </a>
+        <a href="#">
+          <i class="fas fa-map-marker-alt"></i> head office, marathahalli, bangalore, india - 560037
+        </a>
+      </div>
+
+      <div class="box">
+        <h3>follow us</h3>
+        <a href="#"> <i class="fab fa-facebook-f"></i> facebook </a>
+        <a href="#"> <i class="fab fa-twitter"></i> twitter </a>
+        <a href="#"> <i class="fab fa-instagram"></i> instagram </a>
+        <a href="#"> <i class="fab fa-linkedin-in"></i> linkedin </a>
+      </div>
+    </div>
+
+  </section>
+    <footer class="bg-body-tertiary text-center text-lg-start">
+        <p class="text-center p-3" style="background-color: rgb(49, 49, 49); color:white; font-size: medium">&copy; 2024 Event Management System. All rights reserved.</p>
+    </footer>
+    <script src="{% static 'js/bootstrap.bundle.js' %}"></script>
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/index.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+</body>
+</html>

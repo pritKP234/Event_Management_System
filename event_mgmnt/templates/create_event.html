@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %}Create Event{% endblock %}
+
+{% block content %}
+<h1 style="margin-left: 50px; font-size: large; padding-top: 10px;">Create Event</h1>
+<form style="font-size: medium; margin-left: 50px; padding-top: 30px;" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button class="btn" style="margin: 20px;" type="submit">Create Event</button>
+</form>
+{% endblock %}

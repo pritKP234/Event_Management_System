@@ -1,0 +1,193 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<h1 style="margin-left: 50px; padding-top: 20px;">Welcome to the Event Management System</h1>
+<p style="margin-left: 50px; font-size:large">Discover, create, and manage events effortlessly.</p>
+
+
+<div id="carouselExampleControls" class="carousel slide" data-mdb-ride="carousel" data-mdb-carousel-init>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img style="padding-top: 20px; padding-left: 200px; padding-right: 200px; padding-bottom: 30px; height: 600px; width: 500px;"
+                src="{% static 'images/gallery2.jpg' %}" class="d-block w-100" alt="Wild Landscape" />
+        </div>
+        <div class="carousel-item">
+            <img src="{% static 'images/gallery1.jpg' %}" class="d-block w-100" alt="" />
+        </div>
+        <div class="carousel-item">
+            <img src="{% static 'images/gallery3.jpg' %}" class="d-block w-100" alt="" />
+        </div>
+    </div>
+</div>
+
+<section class="service" id="service">
+    <h1 style="color: white;" class="heading">our <span style="color: black;">services</span></h1>
+
+    <div class="box-container">
+        <div class="box">
+            <i class="fas fa-envelope"></i>
+            <h3>invitation card design</h3>
+            <p>
+                Design mind blowing invitation cards online for your special day
+            </p>
+        </div>
+
+        <div class="box">
+            <i class="fas fa-photo-video"></i>
+            <h3>photos and videos</h3>
+            <p>
+                Create or upload amazing photos and videos to be displayed during the occasion
+            </p>
+        </div>
+
+        <div class="box">
+            <i class="fas fa-music"></i>
+            <h3>entertainment</h3>
+            <p>
+                Choose from a wide range of modes of entertainment along with dj night
+            </p>
+        </div>
+        <div class="box">
+            <i class="fas fa-car"></i>
+            <h3>Vallet Parking</h3>
+            <p>
+                large and secured parking spaces for your vehicles along with vallet service
+            </p>
+        </div>
+
+        <div class="box">
+            <i class="fas fa-map-marker-alt"></i>
+            <h3>venue selection</h3>
+            <p>
+                choose from a long list of venues throughout major cities in India
+            </p>
+        </div>
+
+        <div class="box">
+            <i class="fas fa-birthday-cake"></i>
+            <h3>food catering</h3>
+            <p>
+                don't worry about the food, just enjoy it, we have your back
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="about" id="about">
+    <h1 style="color: white;" class="heading"><span style="color: black;">about</span> us</h1>
+
+    <div class="row">
+        <div class="image">
+            <img src="{% static 'images/about.jpg' %}" alt="" />
+        </div>
+
+        <div class="content">
+            <h3 style="color: black;">your occasion deserves our careful planning</h3>
+            <p style="color: black">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam
+                labore fugiat ut esse perferendis perspiciatis provident dolores
+                fuga in facilis culpa possimus, quia praesentium itaque, sapiente
+                quasi harum rem asperiores.
+            </p>
+            <p style="color: black">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit velit similique reiciendis optio saepe.
+                Omnis deserunt, iusto tempore aliquid deleniti cupiditate quos sit molestias libero fugiat ea quisquam
+                quas magnam.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- gallery section starts  -->
+<section class="gallery" id="gallery">
+    <h1 class="heading">our <span style="color: black;">gallery</span></h1>
+
+    <div class="box-container">
+      <div class="box">
+        <img src="{% static 'images/home1.jpg' %}" alt="" />
+        <h3 class="title">best events</h3>
+        <div class="icons">
+          <a href="#" class="fas fa-heart"></a>
+          <a href="#" class="fas fa-share"></a>
+          <a href="#" class="fas fa-eye"></a>
+        </div>
+      </div>
+
+      <div class="box">
+        <img src="{% static 'images/home2.jpg' %}" alt="" />
+        <h3 class="title">best events</h3>
+        <div class="icons">
+          <a href="#" class="fas fa-heart"></a>
+          <a href="#" class="fas fa-share"></a>
+          <a href="#" class="fas fa-eye"></a>
+        </div>
+      </div>
+
+      <div class="box">
+        <img src="{% static 'images/home3.jpg' %}" alt="" />
+        <h3 class="title">best events</h3>
+        <div class="icons">
+          <a href="#" class="fas fa-heart"></a>
+          <a href="#" class="fas fa-share"></a>
+          <a href="#" class="fas fa-eye"></a>
+        </div>
+      </div>
+
+      <div class="box">
+        <img src="{% static 'images/home4.jpg' %}" alt="" />
+        <h3 class="title">best events</h3>
+        <div class="icons">
+          <a href="#" class="fas fa-heart"></a>
+          <a href="#" class="fas fa-share"></a>
+          <a href="#" class="fas fa-eye"></a>
+        </div>
+      </div>
+
+      <div class="box">
+        <img src="{% static 'images/home5.jpg' %}" alt="" />
+        <h3 class="title">best events</h3>
+        <div class="icons">
+          <a href="#" class="fas fa-heart"></a>
+          <a href="#" class="fas fa-share"></a>
+          <a href="#" class="fas fa-eye"></a>
+        </div>
+      </div>
+
+      <div class="box">
+        <img src="{% static 'images/home6.jpg' %}" alt="" />
+        <h3 class="title">best events</h3>
+        <div class="icons">
+          <a href="#" class="fas fa-heart"></a>
+          <a href="#" class="fas fa-share"></a>
+          <a href="#" class="fas fa-eye"></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <h1 class="heading"><span style="color: black;">your valuable</span> feedback</h1>
+
+    <form action="">
+      <div class="inputBox">
+        <input type="text" placeholder="name" />
+        <input type="email" placeholder="email" />
+      </div>
+      <div class="inputBox">
+        <input type="tel" placeholder="contact no." />
+        <input type="text" placeholder="event details" />
+      </div>
+      <textarea
+        name=""
+        placeholder="message"
+        id=""
+        cols="30"
+        rows="10"
+      ></textarea>
+      <input type="submit" value="send message" class="btn" />
+    </form>
+  </section>
+
+{% endblock %}
